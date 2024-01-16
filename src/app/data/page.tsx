@@ -13,7 +13,9 @@ export default function Names() {
       <TextField
         type="text"
         placeholder="Enter your name"
-        onChange={(event) => (data.name = event.target.value)}
+        onChange={(event) => {
+          setData({ ...data, name: event.target.value });
+        }}
       />
 
       <Box className="flex flex-row space-x-4">

@@ -10,7 +10,16 @@ export default function Names() {
       <TextField
         type="text"
         placeholder="Enter your name"
-        onChange={(event) => (X[0] = event.target.value)}
+        onChange={(event) => {
+          // copy of original value of state
+          let arr = [...X];        
+          
+          // modify the copy
+          arr[0] = event.target.value;
+
+          // set state to the modified copy
+          setX(arr);
+        }}
       />
 
       <Box className="flex flex-row space-x-4">
